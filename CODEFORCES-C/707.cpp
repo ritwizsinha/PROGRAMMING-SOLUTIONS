@@ -1,0 +1,36 @@
+//done by myself
+#include <bits/stdc++.h>
+#define MIN3(a, b, c) (a) < (b) ? ((a) < (c) ? (a) : (c)) : ((b) < (c) ? (b) : (c))
+#define endl "\n"
+#define int long long
+#define forn(i, n) for (long long i = 0; i < long long(n); ++i)
+#define IOS                           \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(0);                       \
+    cout.tie(0);
+using namespace std;
+inline bool is_palindrome(const string &s) { return std::equal(s.begin(), s.end(), s.rbegin()); }
+int32_t main()
+{
+    IOS int n;
+    cin >> n;
+    int flag = 0;
+    for (int i = 1; i < n; i++)
+    {
+        if (i * i + (n - i) * (n - i) == n * n)
+        {
+            flag = 1;
+            cout << i << " " << n - i;
+            break;
+        }
+        if ((n * n) % i == 0 && (i + n * n / i) % 2 == 0)
+        {
+            cout << (n * n / i - i) / 2 << " " << (n * n / i + i) / 2;
+            flag = 1;
+            break;
+        }
+    }
+    if (flag == 0)
+        cout << -1;
+    return 0;
+}
