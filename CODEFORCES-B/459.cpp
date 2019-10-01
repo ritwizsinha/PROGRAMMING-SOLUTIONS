@@ -24,7 +24,8 @@ int arr[n];
      r--;l++;count++;
  }
  cout<<init<<" " <<count;
- 
+ int timepass=0;
+ timepass++;
 auto stop = high_resolution_clock::now(); 
     auto duration = duration_cast<microseconds>(stop - start); 
 //cout << "Time taken by function: "<< duration.count() << " microseconds" << endl;
